@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :movies
   end
-  resources :movies, only: [ :index ] do
+  resources :movies, only: [:index, :show] do
+    resources :schedules, only: [:index]
     get :search_movie, on: :collection
   end
 
