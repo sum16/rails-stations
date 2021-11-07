@@ -1,0 +1,20 @@
+<div class="form-container">
+
+<%= alert %>
+
+    <%= form_with model: @schedule, url: admin_schedule_path, method: :PUT, local: true do |form| %>
+      <div class="input-group mb-3 border">
+        <%= form.label "タイトル", class: "input-group-text" %>
+        <%= form.text_field :start_time, class: "form-control" %>
+      </div>
+      <div class="input-group mb-3 border">
+        <%= form.label "公開年", class: "input-group-text mr-1" %>
+        <%= form.text_field :end_time, class: 'form-control' %>
+      </div>
+      <div class="submit-btn">
+          <input type="button" value="Close" class="btn bg-light">
+          <%= form.submit "更新", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+</div>
+

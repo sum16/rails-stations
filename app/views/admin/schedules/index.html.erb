@@ -1,0 +1,12 @@
+<% @movies.map do |movie| %>
+
+  <h2><%= movie.id %></h2>
+  <h2><%= link_to movie.name, admin_movie_path(movie.id) %></h2>
+<% end %>
+
+<% @schedules.map do |schedule| %>
+  <%= schedule.start_time.strftime("%p %I:%M") %>
+  <%= schedule.end_time.strftime("%p %I:%M") %>
+  <%= link_to "スケジュールを詳細", admin_schedule_path(schedule.id) %>
+  <%= link_to "スケジュールを削除する", admin_schedule_path(schedule.id), method: :delete, data: { confirm: "【確認】アカウントを削除してもよろしいですか？" } %>
+<% end %>
