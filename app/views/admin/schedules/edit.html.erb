@@ -1,7 +1,6 @@
 <div class="form-container">
 
 <%= alert %>
-
     <%= form_with model: @schedule, url: admin_schedule_path, method: :PUT, local: true do |form| %>
       <div class="input-group mb-3 border">
         <%= form.label "タイトル", class: "input-group-text" %>

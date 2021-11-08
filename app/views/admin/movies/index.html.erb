@@ -10,6 +10,8 @@
         <th>上映中</th>
         <th>作成日時</th>
         <th>更新日時</th>
+        <th>上映予定時刻</th>
+        <th>上映終了時刻</th>
       </tr>
       
       <% @movies.each do |movie| %>
@@ -22,6 +24,13 @@
           <td><%= movie.is_showing ? "上映中": "上映予定" %></td>
           <td><%= movie.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
           <td><%= movie.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+          <% movie.schedules.each do |n| %>
+          <%= n.start_time %>
+          <% end %>
+          <% movie.schedules.each do |movie_schedule| %>
+            <td><%= movie_schedule.start_time.strftime("%p %I:%M") %></td><br>
+            <td><%= movie_schedule.end_time.strftime("%p %I:%M") %></td>
+          <% end %>
         </tr>
       <% end %>
     </table>
