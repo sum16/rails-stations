@@ -61,3 +61,6 @@ docker compose exec web rails db:migrate:status でdownを確認
 
 pryに接続
 docker attach 3ad88d22055b
+
+docker compose exec web rails g controller admin/schedules index show edit 
+

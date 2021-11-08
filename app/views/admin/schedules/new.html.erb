@@ -1,0 +1,22 @@
+<p>スケジュール作成</p>
+
+<div class="form-container">
+<%= alert %>
+
+    <%= form_with model: @schedule, url: admin_schedules_path, method: :post, local: true do |form| %>
+    <%= form.hidden_field :movie_id, :value => @movie.id %>
+      <div class="input-group mb-3 border">
+        <%= form.label "上映開始時刻", class: "input-group-text" %>
+        <%= form.datetime_field :start_time, class: "form-control" %>
+      </div>
+      <div class="input-group mb-3 border">
+        <%= form.label "上映終了時刻", class: "input-group-text mr-1" %>
+        <%= form.datetime_field :end_time, class: 'form-control' %>
+      </div>
+      <div class="submit-btn">
+          <input type="button" value="Close" class="btn bg-light">
+          <%= form.submit "作成", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+</div>
+

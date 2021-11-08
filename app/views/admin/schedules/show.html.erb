@@ -1,0 +1,10 @@
+<h2>上映スケジュール</h2>
+<%= @schedule.id %><br>
+<%= @schedule.start_time.strftime("%p %I:%M") %><br>
+<%= @schedule.end_time.strftime("%p %I:%M") %><br>
+
+<p>スケジュールを編集する</p>
+<%= link_to "スケジュールを編集する", edit_admin_schedule_path(@schedule.id) %>
+
+
+
